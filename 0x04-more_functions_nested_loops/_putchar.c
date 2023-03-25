@@ -1,13 +1,11 @@
+#include <unistd.h>
 #include "main.h";
 /**
  * main - main
  * Description: Description
  * Return: Return
  */
-int _isdigit(int c)
+int _putchar(char c)
 {
-if (c >= 48 && c <= 57)
-return (1);
-else
-return (0);
+return (write(1,&c,1));
 }

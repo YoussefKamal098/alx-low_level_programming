@@ -1,7 +1,7 @@
 #include "main.h"
 /**
- * main - main
- * Description: Description
+ * _isdigit - _isdigit
+ * @c: Rescription
  * Return: Return
  */
 int _isdigit(int c)

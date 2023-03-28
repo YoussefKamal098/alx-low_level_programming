@@ -14,3 +14,4 @@ i++;
 dest[i] = src[i];
 } while (src[i] != '\0');
 return (dest);
+}

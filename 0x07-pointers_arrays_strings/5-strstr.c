@@ -9,12 +9,13 @@
 */
 
 char *_strstr(char *haystack, char *needle)
-{
-int i = 0;
+{int i, j;
+char *p;
+i = 0;
 while (haystack[i] != '\0')
 {
-int j = 0;
-char *ptr = &haystack[i];
+j = 0;
+*ptr = &haystack[i];
 while (haystack[i] == needle[j])
 {
 j++;
@@ -25,5 +26,5 @@ return (ptr);
 }
 i++;
 }
-return (NULL);
+return (0);
 }

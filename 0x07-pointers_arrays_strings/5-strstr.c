@@ -23,6 +23,7 @@ if (needle[j] == '\0')
 return (ptr);
 }
 }
+i++;
 }
 return (NULL);
 }

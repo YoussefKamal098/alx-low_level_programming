@@ -31,6 +31,10 @@ if (needle[j] == '\0')
 {
 return (ptr);
 }
+if (haystack[t] == '\0')
+{
+return (0);
+}
 }
 i++;
 }

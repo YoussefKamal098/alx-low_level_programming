@@ -17,6 +17,6 @@ s1 += a[i];
 s2 += a[size - i - 1];
 a += size;
 }
-printf("%d", s1);
+printf("%d, ", s1);
 printf("%d\n", s2);
 }

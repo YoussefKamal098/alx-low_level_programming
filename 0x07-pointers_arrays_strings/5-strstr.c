@@ -15,7 +15,7 @@ i = 0;
 while (haystack[i] != '\0')
 {
 j = 0;
-*ptr = &haystack[i];
+ptr = &haystack[i];
 while (haystack[i] == needle[j])
 {
 j++;

@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <string.h>
 /**
  * is_palindrome - is_palindrome
  * description:description

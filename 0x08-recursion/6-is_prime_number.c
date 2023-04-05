@@ -29,5 +29,5 @@ return (1);
 else if (n % d == 0 || n <= 1)
 return (0);
 else
-check_prime(n, d + 1);
+return (check_prime(n, d + 1));
 }

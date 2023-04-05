@@ -9,34 +9,13 @@
 */
 
 char *_strstr(char *haystack, char *needle)
-{int i, j, t;
-char *ptr;
-
-if (needle[0] == '\0')
+{char *ptr;
+ptr = haystack;
+while (*ptr)
 {
-return (0);
-}
-
-i = 0;
-while (haystack[i] != '\0')
-{
-j = 0;
-ptr = &haystack[i];
-t = i;
-while (haystack[t] == needle[j])
-{
-j++;
-t++;
-if (needle[j] == '\0')
-{
+if (strncmp(ptr, needle, strlen(needle)) == 0)
 return (ptr);
-}
-if (haystack[t] == '\0')
-{
-return (0);
-}
-}
-i++;
+ptr++;
 }
 return (0);
 }

@@ -52,7 +52,7 @@ return (found_char(s1, s2, i + 1, j));
 */
 
 int helper(char *s1, char *s2, int i, int j, int past_star)
-{
+{int idx;
 if (s2[j] == '*' && s2[j + 1] == '\0')
 return (1);
 if (s2[j] == '*')
@@ -69,7 +69,7 @@ if (s1[i] == s2[j] && past_star)
 {
 if (helper(s1, s2, i + 1, j + 1, 0))
 return (1);
-int idx = found_char(s1, s2, i + 1, j);
+idx = found_char(s1, s2, i + 1, j);
 if (idx != -1)
 if (helper(s1, s2, idx + 1, j + 1, 0))
 return (1);
@@ -77,4 +77,5 @@ return (0);
 }
 if (s1[i] == s2[j])
 return (helper(s1, s2, i + 1, j + 1, 0));
+return (-1);
 }

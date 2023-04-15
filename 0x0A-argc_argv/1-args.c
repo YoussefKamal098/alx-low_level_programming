@@ -8,7 +8,7 @@
  * Return:return
  */
 
-int main(int argc, int *argv[])
+int main(int argc, char const *argv[])
 {(void)argc;
 printf("%s\n", argc);
 return (0);

@@ -17,6 +17,8 @@ int cents[] = {25, 10, 5, 2, 1};
 
 for (i = 0; i < 5; i++)
 {
+if (money >= cents[i])
+{
 least_cents += money / cents[i];
 money = money % cents[i];
 if (money % cents[i] == 0)
@@ -24,8 +26,9 @@ if (money % cents[i] == 0)
 break;
 }
 }
+}
 
-printf("%d\n", least_cents;
+printf("%d\n", least_cents);
 }
 else
 {

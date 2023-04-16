@@ -8,11 +8,11 @@
  * Return:return
  */
 
-int main(int argc, int *argv[])
+int main(int argc, char *argv[])
 {int i;
 (void)argc;
 
-for (i = 0; i < sizeof(argv) / sizeof(argv[0]); i++)
+for (i = 0; i < argc; i++)
 {
 printf("%s\n", argv[i]);
 }

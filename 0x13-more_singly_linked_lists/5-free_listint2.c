@@ -18,6 +18,6 @@ while (curr)
 {
 temp = curr;
 curr = curr->next;
-free(curr);
+free(temp);
 }
 }

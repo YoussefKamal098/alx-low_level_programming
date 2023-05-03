@@ -14,7 +14,7 @@ listint_t *h;
 if (!head || !*head)
 return;
 
-*h = (*head)->next;
+h = (*head)->next;
 
 free_listint2(&h);
 

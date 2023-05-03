@@ -9,13 +9,10 @@
 
 void free_listint2(listint_t **head)
 {
+listint_t *h = (*head)->next;
+
 if (!head || !*head)
 return;
-
-listint_t *temp = *head;
-listint_t *h = temp->next;
-
-
 
 free_listint2(&h);
 

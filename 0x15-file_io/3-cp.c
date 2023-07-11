@@ -44,10 +44,10 @@ from_fd = close(from_fd);
 to_fd = close(to_fd);
 
 if (from_fd)
-dprintf(STDERR_FILENO, ERR_ClOSE, argv[1]), exit(100);
+dprintf(STDERR_FILENO, ERR_ClOSE, from_fd), exit(100);
 
 if (to_fd)
-dprintf(STDERR_FILENO, ERR_ClOSE, argv[2]), exit(100);
+dprintf(STDERR_FILENO, ERR_ClOSE, to_fd), exit(100);
 
 return (EXIT_SUCCESS);
 }

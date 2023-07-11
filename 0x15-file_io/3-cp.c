@@ -38,10 +38,10 @@ if (write(to_fd, buffer, bytes) != bytes)
 dprintf(STDERR_FILENO, ERR_WRITE, argv[2]), exit(99);
 
 if (bytes == -1)
-dprintf(STDERR_FILENO, ERR_READ, argv[1]), exit(100);
+dprintf(STDERR_FILENO, ERR_READ, argv[1]), exit(98);
 
-close(from_fd);
-close(to_fd);
+from_fd = close(from_fd);
+to_fd = close(to_fd);
 
 if (from_fd)
 dprintf(STDERR_FILENO, ERR_ClOSE, argv[1]), exit(100);

@@ -14,7 +14,7 @@
  * Return:return
  */
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
 int from_fd = 0, to_fd = 0;
 char buffer[BUFFER_SIZE];

@@ -16,10 +16,13 @@ dlistint_t *curr = head;
 
 while (curr->next)
 {
+if (curr->prev)
 free(curr->prev);
+
 curr = curr->next;
 }
-
+if (curr->prev)
 free(curr->prev);
+
 free(curr);
 }

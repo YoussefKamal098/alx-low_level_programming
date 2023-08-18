@@ -23,8 +23,9 @@ free(*head);
 }
 else
 {
+temp = *head;
 *head = (*head)->next;
-free((*head)->prev);
+free(temp);
 }
 return (1);
 }

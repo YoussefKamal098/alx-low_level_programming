@@ -8,14 +8,14 @@
 
 int main(void)
 {
-    char *str = "_putchar\n";
-    char *ch = str;
+	char *str = "_putchar\n";
+	char *ch = str;
 
-    while (*ch != '\0')
-    {
-        _putchar(*ch);
-        ch++;
-    }
+	while (*ch != '\0')
+	{
+		_putchar(*ch);
+		ch++;
+	}
 
-    return (0);
+	return (0);
 }

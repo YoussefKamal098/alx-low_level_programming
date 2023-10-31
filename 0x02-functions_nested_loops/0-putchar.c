@@ -1,13 +1,21 @@
-#include <unistd.h>
-#include "main.h";
+#include "main.h"
 
 /**
- * _putchar - main
- * @c:c
- * description: Description
- * Return: Return
+ * main - (main)
+ * Description : (Description)
+ * Return: (Return)
  */
-int _putchar(char c)
+
+int main(void)
 {
-	return (write(1, &c, 1));
+    char *str = "_putchar\n";
+    char *ch = str;
+
+    while (*ch != '\0')
+    {
+        _putchar(*ch);
+        ch++;
+    }
+
+    return (0);
 }

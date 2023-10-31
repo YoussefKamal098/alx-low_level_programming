@@ -16,7 +16,7 @@ void times_table(void)
 		{
 			_putchar(',');
 			_putchar(' ');
-			proudct = i * num;
+			product = i * num;
 
 			if (num <= 9)
 				_putchar(' ');

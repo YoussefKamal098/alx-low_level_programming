@@ -16,10 +16,10 @@ void times_table(void)
 		{
 			_putchar(',');
 			_putchar(' ');
-			prouct = i * num;
+			proudct = i * num;
 
 			if (num <= 9)
-				_pucchar(' ');
+				_putchar(' ');
 			else
 				_putchar((product / 10) + '0');
 

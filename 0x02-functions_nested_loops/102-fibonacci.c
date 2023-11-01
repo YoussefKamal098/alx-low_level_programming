@@ -7,7 +7,7 @@ int main(void)
 {
 	int i, t1 = 0, t2 = 1, sum;
 
-	for (i = 0, i < 50, i++)
+	for (i = 0; i < 50; i++)
 	{
 		sum = t1 + t2;
 		printf("%d", sum);
@@ -21,7 +21,7 @@ int main(void)
 		}
 		else
 		{
-			print(', ');
+			printf(', ');
 		}
 	}
 

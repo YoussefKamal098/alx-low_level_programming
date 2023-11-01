@@ -5,7 +5,7 @@
  */
 int main(void)
 {
-	long i, t1 = 0, t2 = 1, sum;
+	long t1 = 0, t2 = 1, sum;
 	float total_sum;
 
 	while (1)

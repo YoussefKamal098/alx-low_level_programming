@@ -37,7 +37,7 @@ int main(void)
 	{
 		if (f1 > 0)
 		{
-			printf("%l", f1);
+			printf("%lu", f1);
 		}
 
 		initial0s = num_length(max) - 1 - num_length(t1);
@@ -48,7 +48,7 @@ int main(void)
 			initial0s--;
 		}
 
-		printf("%l", t1);
+		printf("%lu", t1);
 
 		sum = (t1 + t2) % max;
 		sumo = f1 + f2 + (t1 + t2) / max;

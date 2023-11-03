@@ -28,6 +28,8 @@ double _pow(double x, double y)
 
 void print_number(int n)
 {
+	int digits_number, div;
+
 	if (n < 0)
 	{
 		n *= -1;
@@ -39,8 +41,6 @@ void print_number(int n)
 		_putchar('0');
 		return;
 	}
-
-	int digits_number, div;
 
 	digits_number = calc_of_digit(n);
 	div = (int)_pow(10, digits_number - 1);

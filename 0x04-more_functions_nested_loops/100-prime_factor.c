@@ -68,7 +68,7 @@ int main(void)
 	if (num > 2)
 		largest = num;
 
-	printf("%d", largest);
+	printf("%d\n", largest);
 
 	return (0);
 }

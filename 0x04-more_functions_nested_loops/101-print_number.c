@@ -1,6 +1,25 @@
 #include "main.h"
 
 /**
+ * calc_of_digit - calc_of_digit
+ * @n: n
+ * Return: return
+ */
+
+int calc_of_digit(int n)
+{
+	int size = 0;
+
+	while (n)
+	{
+		n /= 10;
+		size += 1;
+	}
+
+	return (size);
+}
+
+/**
  * _pow - _pow
  * @x: x
  * @y: y

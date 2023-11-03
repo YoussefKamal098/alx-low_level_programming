@@ -49,7 +49,10 @@ int main(void)
 			_putchar((i % 10) + '0');
 		}
 
-		_putchar(' ');
+		if (i != 100)
+			_putchar(' ');
+		else
+			_putchar('\n');
 	}
 
 	return (0);

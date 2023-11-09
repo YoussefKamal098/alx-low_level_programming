@@ -1,19 +1,6 @@
 #include "main.h"
 
 /**
- * to_lower - to_lower
- * @c: c
- * Return: return
- */
-
-char to_lower(char c)
-{
-	if (c >= 97 && c <= 122)
-		return (c);
-	return (c + 32);
-}
-
-/**
  * leet - leet
  * @str: str
  * Return: return
@@ -29,7 +16,7 @@ char *leet(char *str)
 	{
 		for (j = 0; j < sizeof(decrypt) / sizeof(decrypt[0]); j++)
 		{
-			if (to_lower(str[i]) == decrypt[j])
+			if (str[i] == decrypt[j] || str[i] + 32 == decrypt[j])
 			{
 				str[i] = encrypt[j];
 				break;

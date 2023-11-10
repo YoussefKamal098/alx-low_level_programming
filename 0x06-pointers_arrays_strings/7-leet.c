@@ -17,7 +17,7 @@ char *leet(char *c)
 	{
 		for (i = 0; i < sizeof(decrypt) / sizeof(decrypt[0]); i++)
 		{
-			if (*c == decrypt[i] || *c == decrypt[i] - 23)
+			if (*c == decrypt[i] || *c == decrypt[i] - 32)
 			{
 				*c = encrypt[i] + 48;
 			}

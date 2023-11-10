@@ -33,7 +33,6 @@ char *leet(char *str)
 			if (to_lower(str[i]) == decrypt[j])
 			{
 				str[i] = encrypt[j];
-				break;
 			}
 		}
 	}

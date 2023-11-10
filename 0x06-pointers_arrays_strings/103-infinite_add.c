@@ -55,7 +55,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		if (tallest_number + 2 > size_r)
 			return (0);
 
-		while (tallest_number-- > 0)
+		while (tallest_number-- >= 0)
 		{
 			printf("%d\n", tallest_number);
 			r[tallest_number + 1] = r[tallest_number];

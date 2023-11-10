@@ -2,25 +2,28 @@
 
 /**
  * leet - leet
- * @str: str
+ * @c: c
  * Return: return
  */
 
-char *leet(char *str)
+char *leet(char *c)
 {
-	unsigned int i, j;
+	char *str = c;
+	unsigned int i;
 	const char decrypt[] = {'a', 'e', 'o', 't', 'l'};
 	const char encrypt[] = {'4', '3', '0', '7', '1'};
 
-	for (i = 0; str[i] != '\0'; i++)
+	while (*c)
 	{
-		for (j = 0; j < sizeof(decrypt) / sizeof(decrypt[0]); j++)
+		for (i = 0; i < sizeof(decrypt) / sizeof(decrypt[0]); i++)
 		{
-			if (str[i] == decrypt[j] || str[i] == decrypt[j] - 23)
+			if (*c == decrypt[i] || *c == decrypt[i] - 23)
 			{
-				str[i] = encrypt[j];
+				*c = encrypt[i];
 			}
 		}
+
+		c++;
 	}
 
 	return (str);

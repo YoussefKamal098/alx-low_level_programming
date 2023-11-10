@@ -32,7 +32,7 @@ char is_alpha(char c)
 
 int is_delimiter(char c)
 {
-	int i;
+	unsigned int i;
 	const char delimiters[] = " \t\n,;.!?\"(){}";
 
 	for (i = 0; i < sizeof(delimiters) / sizeof(delimiters[0]); i++)

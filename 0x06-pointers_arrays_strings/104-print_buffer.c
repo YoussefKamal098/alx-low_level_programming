@@ -13,7 +13,7 @@ int is_ascii_char(int c)
 
 /**
  * print_hex - print_hex
- * @b: b
+ * @s: s
  * @start: start
  * @end: end
  * Return: return
@@ -39,7 +39,7 @@ void print_hex(char *s, int start, int end)
 
 /**
  *  print_ascii -  print_ascii
- * @b: b
+ * @s: s
  * @start: start
  * @end: end
  * Return: return

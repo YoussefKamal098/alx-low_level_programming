@@ -25,19 +25,18 @@ char *leet(char *str)
 	int i, j;
 	const char decrypt[] = {'a', 'e', 'o', 't', 'l'};
 	const char encrypt[] = {'4', '3', '0', '7', '1'};
-	char *encrypted_str = str;
 
-	for (i = 0; encrypted_str[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		for (j = 0; j < sizeof(decrypt) / sizeof(decrypt[0]); j++)
 		{
-			if (to_lower(encrypted_str[i]) == decrypt[j])
+			if (to_lower(str[i]) == decrypt[j])
 			{
-				encrypted_str[i] = encrypt[j];
+				str[i] = encrypt[j];
 				break;
 			}
 		}
 	}
 
-	return (encrypted_str);
+	return (str);
 }

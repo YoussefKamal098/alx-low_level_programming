@@ -9,9 +9,9 @@
 char *leet(char *c)
 {
 	char *str = c;
-	unsigned int i;
 	const char decrypt[] = {'a', 'e', 'o', 't', 'l'};
-	const char encrypt[] = {'4', '3', '0', '7', '1'};
+	const int encrypt[] = {4, 3, 0, 7, 1};
+	unsigned int i;
 
 	while (*c)
 	{
@@ -19,7 +19,7 @@ char *leet(char *c)
 		{
 			if (*c == decrypt[i] || *c == decrypt[i] - 23)
 			{
-				*c = encrypt[i];
+				*c = encrypt[i] + 48;
 			}
 		}
 

@@ -22,7 +22,7 @@ char to_lower(char c)
 
 char *leet(char *str)
 {
-	int i, j;
+	unsigned int i, j;
 	const char decrypt[] = {'a', 'e', 'o', 't', 'l'};
 	const char encrypt[] = {'4', '3', '0', '7', '1'};
 

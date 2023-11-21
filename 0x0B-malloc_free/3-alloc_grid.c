@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * alloc_grid - alloc_grid
  * @width :width
@@ -10,10 +9,12 @@
 int **alloc_grid(int width, int height)
 {
 	int i, j;
-	int **grid = (int **)malloc(sizeof(int *) * height);
+	int **grid;
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
+
+	grid = (int **)malloc(sizeof(int *) * height);
 
 	if (grid == NULL)
 		return (NULL);
@@ -21,9 +22,6 @@ int **alloc_grid(int width, int height)
 	for (i = 0; i < height; i++)
 	{
 		int *row = (int *)malloc(sizeof(int) * width);
-
-		if (row == NULL)
-			return (NULL);
 
 		if (row == NULL)
 			return (NULL);
@@ -36,5 +34,3 @@ int **alloc_grid(int width, int height)
 
 	return (grid);
 }
-
-

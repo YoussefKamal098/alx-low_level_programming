@@ -2,20 +2,30 @@
 
 /**
  * _strdup - _strdup
- * description:decription
- * @str : @str
- * Return:return
-*/
+ * @str :str
+ * Return: return
+ */
 
 char *_strdup(char *str)
-{int i;
-char *s;
-if (strlen(str) == 0)
-return (0);
-s = malloc(strlen(str) + 1);
-for (i = 0; i < strlen(str); ++i)
 {
-s[i] = str[i];
-}
-return (s);
+	int i, str_len = 0;
+	char *str_copy;
+
+	if (str == NULL)
+		return (NULL);
+
+	for (i = 0; str[i] != '\0'; i++)
+		str_len++;
+
+	str_copy = (char *)malloc(str_len + 1);
+
+	if (str_copy == NULL)
+		return (NULL);
+
+	for (i = 0; str[i] != '\0'; i++)
+		str_copy[i] = str[i];
+
+	str_copy[i] = '\0';
+
+	return (str_copy);
 }

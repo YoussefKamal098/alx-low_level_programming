@@ -103,6 +103,16 @@ char **strtow(char *str)
 		if (*curr_ch != ' ')
 		{
 			words[i] = get_word(curr_ch);
+
+			if (words[i] == NULL)
+			{
+				while (i--)
+					free(words[i]);
+
+				free(words);
+				return (NULL);
+			}
+
 			curr_ch = skip_characters(curr_ch);
 			curr_ch--;
 			i++;

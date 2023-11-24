@@ -1,18 +1,6 @@
 #include "main.h"
 
 /**
- * _putchar - _putchar
- * @c:c
- * Return: return
- */
-
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-
-
-/**
  * is_number - is_number
  * @s: s
  * Return: return
@@ -170,7 +158,7 @@ void _puts(char *str)
 {
 	while (*str != '\0')
 	{
-		_putchar(*str);
+		_putchar(*str + 0);
 		str++;
 	}
 	_putchar('\n');
@@ -190,22 +178,22 @@ int main(int ac, char *av[])
 
 	if (ac != 3 || !is_number(av[1]) || !is_number(av[2]))
 	{
-		printf("Error\n");
-		exit(98);
+		_puts("Error\n");
+		return (98);
 	}
 
 	if (av[1][0] == '\0' || av[2][0] == '\0')
 	{
-		printf("Error\n");
-		exit(98);
+		_puts("Error\n");
+		return (98);
 	}
 
 	res = multiply(av[1], av[2]);
 
 	if (res == NULL)
 	{
-		printf("Error\n");
-		exit(98);
+		_puts("Error\n");
+		return (98);
 	}
 
 	while (res[i] == '0')

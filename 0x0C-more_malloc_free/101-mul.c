@@ -164,6 +164,28 @@ void _puts(char *str)
 }
 
 /**
+ * is_zero -  is_zero
+ * @str : @str
+ * Return:return
+ */
+
+int is_zero(char *str)
+{
+	int i;
+
+	if (*str == '-')
+		str++;
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		if (str[i] != '0')
+			return (0);
+	}
+
+	return (1);
+}
+
+/**
  * main - main
  * @ac: ac
  * @av:av
@@ -185,6 +207,13 @@ int main(int ac, char *av[])
 	{
 		_puts("Error\n");
 		exit(98);
+	}
+
+	if (is_zero(av[1]) || is_zero(av[2]))
+	{
+		_putchar('0');
+		_putchar('\n');
+		return (0);
 	}
 
 	res = multiply(av[1], av[2]);

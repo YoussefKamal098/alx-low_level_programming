@@ -178,13 +178,13 @@ int main(int ac, char *av[])
 	if (ac != 3 || !is_number(av[1]) || !is_number(av[2]))
 	{
 		_puts("Error\n");
-		return (98);
+		exit(98);
 	}
 
 	if (av[1][0] == '\0' || av[2][0] == '\0')
 	{
 		_puts("Error\n");
-		return (98);
+		exit(98);
 	}
 
 	res = multiply(av[1], av[2]);
@@ -192,7 +192,7 @@ int main(int ac, char *av[])
 	if (res == NULL)
 	{
 		_puts("Error\n");
-		return (98);
+		exit(98);
 	}
 
 	while (res[i] == '0')

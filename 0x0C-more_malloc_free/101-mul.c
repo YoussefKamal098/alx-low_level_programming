@@ -108,6 +108,7 @@ int get_result_len(char *num1, char *num2)
  * @num2: num2
  * Return: return
  */
+
 char *multiply(char *num1, char *num2)
 {
 	int num1_len = _strlen(num1);
@@ -150,29 +151,41 @@ char *multiply(char *num1, char *num2)
 /**
  * main - main
  * @ac: ac
- * @av :av
+ * @av: av
  * Return: return
  */
 
 int main(int ac, char *av[])
 {
-	char *result;
+	char *res;
 	int i = 0;
 
 	if (ac != 3 || !is_number(av[1]) || !is_number(av[2]))
 	{
 		printf("Error\n");
-		return (98);
+		exit(98);
 	}
 
-	result = multiply(av[1], av[2]);
+	if (av[1][0] == '\0' || av[2][0] == '\0')
+	{
+		printf("Error\n");
+		exit(98);
+	}
 
-	while (result[i] == '0')
+	res = multiply(av[1], av[2]);
+
+	if (res == NULL)
+	{
+		printf("Error\n");
+		exit(98);
+	}
+
+	while (res[i] == '0')
 		++i;
 
-	printf("%s\n", result + i);
+	printf("%s\n", res + i);
 
-	free(result);
+	free(res);
 
 	return (0);
 }

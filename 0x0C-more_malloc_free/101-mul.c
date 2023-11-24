@@ -1,4 +1,17 @@
 #include "main.h"
+
+/**
+ * _putchar - _putchar
+ * @c:c
+ * Return: return
+ */
+
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
+
+
 /**
  * is_number - is_number
  * @s: s
@@ -198,7 +211,7 @@ int main(int ac, char *av[])
 	while (res[i] == '0')
 		++i;
 
-	puts(res + i);
+	_puts(res + i);
 
 	free(res);
 

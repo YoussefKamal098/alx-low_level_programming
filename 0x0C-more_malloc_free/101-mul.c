@@ -158,10 +158,9 @@ void _puts(char *str)
 {
 	while (*str != '\0')
 	{
-		_putchar(*str + 0);
+		_putchar(*str);
 		str++;
 	}
-	_putchar('\n');
 }
 
 /**
@@ -200,6 +199,7 @@ int main(int ac, char *av[])
 		++i;
 
 	_puts(res + i);
+	_putchar('\n');
 
 	free(res);
 

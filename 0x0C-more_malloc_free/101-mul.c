@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * is_number - is_number
  * @s: s
@@ -117,8 +116,8 @@ char *multiply(char *num1, char *num2)
 	int carry, pro;
 	int shift = 0, d_pos;
 	int sign = get_sign(num1, num2);
-	int i, j;
 	char *res = (char *)malloc(result_len + 1);
+	int i, j;
 
 	if (res == NULL)
 		return (NULL);
@@ -149,9 +148,25 @@ char *multiply(char *num1, char *num2)
 }
 
 /**
+ * _puts - _puts
+ * @str : @str
+ * Return:return
+ */
+
+void _puts(char *str)
+{
+	while (*str != '\0')
+	{
+		_putchar(*str);
+		str++;
+	}
+	_putchar('\n');
+}
+
+/**
  * main - main
  * @ac: ac
- * @av: av
+ * @av:av
  * Return: return
  */
 
@@ -183,9 +198,10 @@ int main(int ac, char *av[])
 	while (res[i] == '0')
 		++i;
 
-	printf("%s\n", res + i);
+	puts(res + i);
 
 	free(res);
 
 	return (0);
 }
+

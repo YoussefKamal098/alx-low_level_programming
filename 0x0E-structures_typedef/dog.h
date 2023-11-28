@@ -1,6 +1,9 @@
 #ifndef _DOG_H
 #define _DOG_H
 
+#include <stdio.h>
+#include <malloc.h>
+
 /**
  * struct dog - struct dog
  * @name: name

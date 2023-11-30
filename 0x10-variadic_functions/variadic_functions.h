@@ -12,7 +12,7 @@
 typedef struct specifier
 {
 	char type;
-	void (*fn)(va_list);
+	void (*fn)(char *separator, va_list args);
 } specifier_t;
 
 int sum_them_all(const unsigned int n, ...);

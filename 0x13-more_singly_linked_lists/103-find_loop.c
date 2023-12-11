@@ -1,12 +1,12 @@
 #include "lists.h"
 
 /**
- * find_loop - find_loop
+ * find_listint_loop - find_listint_loop
  * @head:head
  * Return: return
  */
 
-listint_t *find_loop(listint_t *head)
+listint_t *find_listint_loop(listint_t *head)
 {
 
 	listint_t *curr, *ptr;

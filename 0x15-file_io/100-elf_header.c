@@ -213,7 +213,7 @@ void puts_entry(Elf64_Ehdr elf)
 	if (elf.e_ident[EI_DATA] != ELFDATA2MSB)
 	{
 		i = elf.e_ident[EI_CLASS] == ELFCLASS64 ? 7 : 3;
-		while (ptr[i] != '\0')
+		while (!ptr[i])
 		{
 			i--;
 		}
@@ -229,7 +229,7 @@ void puts_entry(Elf64_Ehdr elf)
 	{
 		length = elf.e_ident[EI_CLASS] == ELFCLASS64 ? 7 : 3;
 		i = 0;
-		while (ptr[i] != '\0')
+		while (!ptr[i])
 		{
 			i++;
 		}

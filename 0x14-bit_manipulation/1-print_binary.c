@@ -9,13 +9,13 @@
 
 void helper(unsigned long int n)
 {
-if (!n)
-{
-return;
-}
+	if (!n)
+	{
+		return;
+	}
 
-helper(n >> 1L);
-_putchar((n & 1L) + '0');
+	helper(n >> 1L);
+	_putchar((n & 1L) + '0');
 }
 
 /**
@@ -27,11 +27,11 @@ _putchar((n & 1L) + '0');
 
 void print_binary(unsigned long int n)
 {
-if (!n)
-{
-_putchar('0');
-return;
-}
+	if (!n)
+	{
+		_putchar('0');
+		return;
+	}
 
-helper(n);
+	helper(n);
 }

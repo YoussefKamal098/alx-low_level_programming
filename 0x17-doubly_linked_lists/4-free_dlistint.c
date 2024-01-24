@@ -9,20 +9,20 @@
 
 void free_dlistint(dlistint_t *head)
 {
-dlistint_t *curr = head;
+	dlistint_t *curr = head;
 
-if (!head)
-return;
+	if (!head)
+		return;
 
-while (curr->next)
-{
-if (curr->prev)
-free(curr->prev);
+	while (curr->next)
+	{
+		if (curr->prev)
+			free(curr->prev);
 
-curr = curr->next;
-}
-if (curr->prev)
-free(curr->prev);
+		curr = curr->next;
+	}
+	if (curr->prev)
+		free(curr->prev);
 
-free(curr);
+	free(curr);
 }

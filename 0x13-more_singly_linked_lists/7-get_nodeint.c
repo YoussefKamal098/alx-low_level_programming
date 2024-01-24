@@ -10,10 +10,10 @@
 
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-while (index-- && head)
-{
-head = head->next;
-}
+	while (index-- && head)
+	{
+		head = head->next;
+	}
 
-return (head ? head : NULL);
+	return (head ? head : NULL);
 }

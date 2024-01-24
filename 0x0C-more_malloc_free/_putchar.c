@@ -1,11 +1,12 @@
 #include <unistd.h>
 #include "main.h"
 /**
- * main - main
+ * _putchar - _putchar
+ * @c:c
  * Description: Description
  * Return: Return
  */
 int _putchar(char c)
 {
-return (write(1, &c, 1));
+	return (write(1, &c, 1));
 }

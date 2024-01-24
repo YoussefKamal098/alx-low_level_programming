@@ -8,17 +8,17 @@
  */
 size_t dlistint_len(const dlistint_t *h)
 {
-const dlistint_t *temp = h;
-size_t size = 0;
+	const dlistint_t *temp = h;
+	size_t size = 0;
 
-if (!h)
-return (0);
+	if (!h)
+		return (0);
 
-while (temp)
-{
-temp = temp->next;
-size++;
-}
+	while (temp)
+	{
+		temp = temp->next;
+		size++;
+	}
 
-return (size);
+	return (size);
 }

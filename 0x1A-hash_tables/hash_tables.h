@@ -69,4 +69,15 @@ unsigned long int key_index(const unsigned char *key, unsigned long int size);
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value);
 
+/**
+ * hash_table_get - Retrieves the value associated with
+ * a given key in a hash table
+ * @ht: A pointer to the hash table
+ * @key: The key to search for
+ *
+ * Return: On success, returns the value associated with the key.
+ * On failure (if key is not found or if ht is NULL), returns NULL.
+ */
+char *hash_table_get(const hash_table_t *ht, const char *key);
+
 #endif /* HASH_TABLES_H */

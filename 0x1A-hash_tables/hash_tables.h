@@ -1,8 +1,10 @@
 #ifndef HASH_TABLES_H
 #define HASH_TABLES_H
 
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
 /**
  * struct hash_node_s - Node of a hash table
@@ -79,5 +81,20 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value);
  * On failure (if key is not found or if ht is NULL), returns NULL.
  */
 char *hash_table_get(const hash_table_t *ht, const char *key);
+
+/**
+ * hash_table_print - Prints the content of a hash table
+ * @ht: A pointer to the hash table
+ *
+ * This function prints the key-value pairs of a hash table
+ * in the following format:
+ * {'key': 'value', 'key': 'value', ...}
+ * If the hash table or its array is NULL, or if its size is zero,
+ * the function does nothing.
+ *
+ * Note: The order of key-value pairs might not be the same as
+ * the insertion order.
+ */
+void hash_table_print(const hash_table_t *ht);
 
 #endif /* HASH_TABLES_H */

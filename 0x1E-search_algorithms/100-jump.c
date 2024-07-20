@@ -28,7 +28,7 @@
  */
 int jump_search(int *array, size_t size, int value)
 {
-	size_t curr_pos, jump = (size_t) sqrt((double) size), pre_pos;
+	size_t curr_pos, jump, pre_pos;
 
 	if (array == NULL || size == 0)
 		return (-1);

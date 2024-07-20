@@ -30,7 +30,12 @@ int jump_search(int *array, size_t size, int value)
 {
 	size_t curr_pos, jump = (size_t) sqrt((double) size), pre_pos;
 
+	if (array == NULL || size == 0)
+		return (-1);
+
+	jump = (size_t) sqrt((double) size);
 	curr_pos = 0;
+	
 	while (array[MIN(curr_pos, size - 1)] < value)
 	{
 		pre_pos = curr_pos;

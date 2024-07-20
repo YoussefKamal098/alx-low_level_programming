@@ -91,7 +91,7 @@ void print_array_portion(int *array, size_t left, size_t right)
 		if (print_delimiter)
 			printf(", ");
 
-		printf("%d", array[i]);76
+		printf("%d", array[i]);
 
 		print_delimiter = true;
 	}

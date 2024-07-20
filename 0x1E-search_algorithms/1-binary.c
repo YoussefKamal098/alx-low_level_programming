@@ -38,7 +38,7 @@ static void print_array_portion(int *array, size_t left, size_t right);
  */
 int binary_search(int *array, size_t size, int value)
 {
-	size_t left = 0, right, mid;
+	size_t left, right, mid;
 
 	if (array == NULL || size == 0)
 		return (-1);
@@ -48,7 +48,6 @@ int binary_search(int *array, size_t size, int value)
 
 	while (left <= right)
 	{
-
 		print_array_portion(array, left, right);
 
 		mid = left + (right - left) / 2;
@@ -65,8 +64,8 @@ int binary_search(int *array, size_t size, int value)
 }
 
 /**
- * print_array_portion - Prints a portion o 89uiol;'f an array from left to
- * right indices.ko[  '8ctr675c5f768i7ioil;
+ * print_array_portion - Prints a portion of an array from left to
+ * right indices
  *
  * @array: A pointer to the first element of the array to print.
  * @left: The starting index of the portion to print.

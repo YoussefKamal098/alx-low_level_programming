@@ -7,10 +7,11 @@ static listint_t *move_forward(listint_t *list, size_t jump);
  * jump_list - Searches for a value in a sorted singly linked list using the
  *             Jump Search algorithm.
  *
- * This function performs a search on a sorted singly linked list to locate
- * the target value using the Jump Search algorithm. It efficiently narrows
- * down the search range by jumping ahead by a fixed number of nodes, and
- * then performs a linear search within the identified range.
+ * Description: This function performs a search on a sorted singly linked
+ * list to locate the target value using the Jump Search algorithm.
+ * It efficiently narrows down the search range by jumping ahead by a
+ * fixed number of nodes, and then performs a linear search within
+ * the identified range.
  *
  * @list: Pointer to the head of the linked list.
  * @size: The number of elements in the linked list.
@@ -64,8 +65,8 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
  * move_forward - Moves forward by a specified number of nodes in a singly
  *                linked list.
  *
- * This helper function advances the given list pointer by the specified
- * number of nodes, or until the end of the list is reached.
+ * Description: This helper function advances the given list pointer
+ * by the specified number of nodes, or until the end of the list is reached.
  *
  * @list: Pointer to the current node in the linked list.
  * @jump: The number of nodes to move forward.

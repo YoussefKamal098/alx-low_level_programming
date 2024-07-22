@@ -38,14 +38,29 @@
     - [Pros and Cons](#exponential-search-pros-and-cons)
     - [Use Cases](#exponential-search-use-cases)
     - [Complexities](#exponential-search-complexities)
-7. [Comparison of Search Algorithms](#comparison-of-search-algorithms)
-8. [Summary](#summary)
+7. [Linked List Search](#linked-list-search)
+    - [Algorithm](#linked-list-search-algorithm)
+    - [Pseudocode](#linked-list-search-pseudocode)
+    - [Example](#linked-list-search-example)
+    - [Pros and Cons](#linked-list-search-pros-and-cons)
+    - [Use Cases](#linked-list-search-use-cases)
+    - [Complexities](#linked-list-search-complexities)
+8. [Skip List Search](#skip-list-search)
+    - [Algorithm](#skip-list-search-algorithm)
+    - [Pseudocode](#skip-list-search-pseudocode)
+    - [Example](#skip-list-search-example)
+    - [Pros and Cons](#skip-list-search-pros-and-cons)
+    - [Use Cases](#skip-list-search-use-cases)
+    - [Complexities](#skip-list-search-complexities)
+9. [Comparison of Search Algorithms](#comparison-of-search-algorithms)
+10. [Summary](#summary)
 
 ## Overview
 
 Searching algorithms are fundamental in computer science, used to retrieve information stored within a data structure.
 This documentation provides an overview of several common searching algorithms: linear search, binary search, jump
-search, interpolation search, and exponential search. Each algorithm is described with its implementation, pros and
+search, interpolation search, exponential search, linked list search, and skip list search. Each algorithm is described
+with its implementation, pros and
 cons, use cases, and complexities.
 
 ## 1. Linear Search
@@ -176,13 +191,13 @@ def jump_search(arr, target):
     step = int(math.sqrt(n))
     prev = 0
 
-    while arr[MIN(step, n) - 1] < target:
+    while arr[min(step, n) - 1] < target:
         prev = step
         step += int(math.sqrt(n))
         if prev >= n:
             return -1
 
-    for i in range(prev, MIN(step, n)):
+    for i in range(prev, min(step, n)):
         if arr[i] == target:
             return i
     return -1
@@ -249,6 +264,7 @@ def interpolation_search(arr, target):
         if arr[pos] < target:
             low = pos + 1
         else:
+
             high = pos - 1
     return -1
 ```
@@ -284,10 +300,7 @@ Consider a uniformly distributed sorted array `arr = [1, 2, 3, 4, 7, 9]` and tar
 
 - **Best Case**: O(1)
 - **Average Case**: O(log log n)
-- **Worst
-
-Case**: O(n)
-
+- **Worst Case**: O(n)
 - **Space Complexity**: O(1)
 
 ## 5. Exponential Search
@@ -308,7 +321,7 @@ def exponential_search(arr, target):
     while i < n and arr[i] <= target:
         i = i * 2
 
-    return binary_search(arr[:MIN(i, n)], target)
+    return binary_search(arr[:min(i, n)], target)
 
 
 def binary_search(arr, target):
@@ -359,6 +372,131 @@ Consider a sorted array `arr = [1, 2, 3, 4, 7, 9]` and target value `7`.
 - **Worst Case**: O(log n)
 - **Space Complexity**: O(1)
 
+## 6. Linked List Search
+
+### Algorithm
+
+Linked list search involves traversing the nodes of a linked list one by one until the target value is found. This is
+similar to linear search but operates on a linked list data structure.
+
+### Pseudocode
+
+```python
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+
+def linked_list_search(head, target):
+    current = head
+    index = 0
+    while current:
+        if current.value == target:
+            return index
+        current = current.next
+        index += 1
+    return -1
+```
+
+### Example
+
+Consider a linked list: `1 -> 2 -> 3 -> 4 -> 7 -> 9` and target value `7`.
+
+1. Start at head: `1` (no match).
+2. Move to `2` (no match).
+3. Move to `3` (no match).
+4. Move to `4` (no match).
+5. Move to `7` (match found).
+
+**Result**: Index 4
+
+### Pros and Cons
+
+**Pros:**
+
+- Simple to implement.
+- Suitable for linked list data structures.
+
+**Cons:**
+
+- Inefficient for large lists.
+- No indexing, requires traversal of nodes.
+
+### Use Cases
+
+- Searching in linked list data structures.
+- Scenarios where list size is small.
+
+### Complexities
+
+- **Best Case**: O(1)
+- **Average Case**: O(n)
+- **Worst Case**: O(n)
+- **Space Complexity**: O(1)
+
+## 7. Skip List Search
+
+### Algorithm
+
+Skip list search is an efficient algorithm designed for sorted linked lists with multiple levels of forward pointers,
+allowing for fast search operations by "skipping" over nodes.
+
+### Pseudocode
+
+```python
+class SkipListNode:
+    def __init__(self, value, level):
+        self.value = value
+        self.forward = [None] * (level + 1)
+
+
+def skip_list_search(head, target):
+    current = head
+    for level in range(len(current.forward) - 1, -1, -1):
+        while current.forward[level] and current.forward[level].value < target:
+            current = current.forward[level]
+    current = current.forward[0]
+    if current and current.value == target:
+        return True
+    return False
+```
+
+### Example
+
+Consider a skip list with multiple levels, and target value `7`.
+
+1. Start at highest level, move forward while current node value < 7.
+2. Drop down a level, continue moving forward.
+3. Repeat until reaching the base level.
+4. Check base level node for target value.
+
+**Result**: Found or not found.
+
+### Pros and Cons
+
+**Pros:**
+
+- Efficient for large, sorted linked lists.
+- Faster search times due to skipping nodes.
+
+**Cons:**
+
+- More complex implementation.
+- Requires additional space for forward pointers.
+
+### Use Cases
+
+- Large, sorted linked lists.
+- Scenarios where fast search operations are required.
+
+### Complexities
+
+- **Best Case**: O(1)
+- **Average Case**: O(log n)
+- **Worst Case**: O(log n)
+- **Space Complexity**: O(n)
+
 ## Comparison of Search Algorithms
 
 | Algorithm                | Best Case | Average Case | Worst Case | Space Complexity | Use Cases                             |
@@ -368,13 +506,16 @@ Consider a sorted array `arr = [1, 2, 3, 4, 7, 9]` and target value `7`.
 | **Jump Search**          | O(1)      | O(√n)        | O(√n)      | O(1)             | Large/sorted datasets                 |
 | **Interpolation Search** | O(1)      | O(log log n) | O(n)       | O(1)             | Uniformly distributed sorted datasets |
 | **Exponential Search**   | O(1)      | O(log n)     | O(log n)   | O(1)             | Large/sorted datasets, early matches  |
+| **Linked List Search**   | O(1)      | O(n)         | O(n)       | O(1)             | Linked list data structures           |
+| **Skip List Search**     | O(1)      | O(log n)     | O(log n)   | O(n)             | Large/sorted linked lists             |
 
 ## Summary
 
 Each search algorithm has its unique characteristics, making it suitable for different scenarios. Linear search is
 simple but inefficient for large datasets. Binary search is efficient for sorted datasets, while jump search offers a
-balance for large, sorted lists. Interpolation search is highly efficient for uniformly distributed data, and
-exponential search is useful for large, sorted datasets where early matches are expected.
+balance for large, sorted lists. Interpolation search is highly efficient for uniformly distributed data, exponential
+search is useful for large, sorted datasets where early matches are expected, linked list search is simple for linked
+list structures, and skip list search provides efficient search operations for large, sorted linked lists.
 
 Choosing the right algorithm depends on the data's size, distribution, and whether it is sorted. Understanding these
 algorithms and their trade-offs can significantly improve the performance of search operations in various applications.
